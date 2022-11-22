@@ -1432,7 +1432,9 @@
   font-size: 0.8vw;
   justify-content: center;
   padding: 0 0.2vw;
-  width: 2.2vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   border: 1px solid #DDBF73;
   color: #DDBF73;
   margin-right: 0.8vw;
@@ -2913,7 +2915,9 @@
     font-size: 2.5vw;
     justify-content: center;
     padding: 0 0.2vw;
-    width: 7vw;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     border: 1px solid #DDBF73;
     color: #DDBF73;
     margin-right: 2vw;
@@ -4242,8 +4246,10 @@
     letter-spacing: 0;
     font-size: 3vw;
     justify-content: center;
-    padding: 0 0.2vw;
-    width: 10vw;
+    padding: 0.5vw 1.5vw;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     border: 1px solid #DDBF73;
     color: #DDBF73;
     margin-right: 2vw;
@@ -4410,12 +4416,14 @@ p {
   display: inline-block;
 }
 
-button {
+input[type=button], input[type=submit], input[type=text] {
+  -moz-appearance: none; /* FireFox */
+  appearance: none;
   -webkit-appearance: none;
 }
 
-input {
-  -webkit-tap-highlight-color: rgab(0, 0, 0, 0);
+textarea {
+  -webkit-appearance: none;
 }
 
 .phone {
