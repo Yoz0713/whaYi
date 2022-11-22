@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="./style/all.min.css">
 </head>
 <body>
+
+    <div class="island phone">
+        <img src="./img/svg/coin.svg" class="coin">
+        <img src="./img/svg/mail-original.svg" class="mail origin">
+        <img src="./img/svg/mail-golden.svg" class="golden">
+    </div>
     <section class="first-page">
         <div class="first-page-para">
             <div class="imgBox">
@@ -56,7 +62,7 @@
             </div>
         </div>
         <div class="third-page-imgBox">
-            <a href="./img/1x/3.png" data-fancybox="images">
+            <a href="./img/1x/3.png" data-fancybox>
                 <img src="./img/1x/3.png"  />
             </a>
             <span>本圖片為區域機能概略說明使用，公共建設及店家執業狀況依實際現況為主</span>
@@ -488,7 +494,7 @@
         <div class="eighth-page-left">
             <div class="imgBox">
                 <img src="./img/1x/9.png" class="computer">
-                <a href="./img/1x/phone-home1.png" data-fancybox="images">
+                <a href="./img/1x/phone-home1.png" data-fancybox>
                     <img src="./img/1x/phone-home1.png" class="phone" />
                 </a>
                 <p>本圖尺寸僅供參考示意，實際則依成屋現況為準</p>
@@ -532,7 +538,7 @@
         <div class="eighth-page-left">
             <div class="imgBox">
                 <img src="./img/1x/10.png" class="computer">
-                <a href="./img/1x/phone-home2.png" data-fancybox="images">
+                <a href="./img/1x/phone-home2.png" data-fancybox>
                     <img src="./img/1x/phone-home2.png" class="phone" />
                 </a>
                 <p>本圖尺寸僅供參考示意，實際則依成屋現況為準</p>
@@ -1473,9 +1479,29 @@
             },"<+0.5")
         }
         elenthPageAnimation()
+        function islandAnimation(){
+            let gg = gsap.timeline({
+                scrollTrigger:{
+                    trigger:".submit",
+                    start:"top bottom",
+                    toggleActions:"play none none reverse"
+                }
+            })
 
+            gg.to(".island .coin",{
+                opacity:0,
+                duration:0.8
+            }).to(".island .origin",{
+                opacity:0,
+                duration:0.8
+            },"<").to(".island .golden",{
+                opacity:1,
+                duration:0.8
+            },"<")
+        }
+        islandAnimation()
         //fancy
-        $('[data-fancybox="images"]').fancybox({
+        $('[data-fancybox]').fancybox({
             afterLoad : function(instance, current) {
                 var pixelRatio = window.devicePixelRatio || 1;
 
@@ -1494,6 +1520,13 @@
 
 
         //fancy
+        $(window).scroll(function () {
+            var scale_ = ($("body").height()-$(window).height()) / ($('.island').width()-32) //頁面長度與進度條比例
+            let scroll_ = $(this).scrollTop()
+            let scroll_float = (scroll_ / scale_)
+            console.log(scroll_ , scale_)
+            $('.coin').attr("style", "left:" + +scroll_float + "px");
+        })
     </script>
 </body>
 </html>

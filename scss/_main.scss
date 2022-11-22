@@ -1756,6 +1756,7 @@
             }
         }
         &-en{
+            display: none;
             width: fit-content;
             height: fit-content;
             position: absolute;
@@ -3040,6 +3041,46 @@
                     }
                 }
             }
+        }
+    }
+    .island{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 5vw;
+        margin: 0 auto;
+        width: 40vw;
+        height: 10vw;
+        background-color: rgb(36, 35, 35);
+        border-radius: 40px;
+        overflow: hidden;
+        z-index: 25;
+        .coin{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            left: -5vw;
+            width: 5vw;
+        }
+        .mail{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            right:3vw;
+            width: 5vw;
+            filter: invert(2);
+        }
+        .golden{
+            position: absolute;
+        
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            right:3vw;
+            width: 5vw;
+            opacity:0;
         }
     }
     @media screen and (max-width:500px){
