@@ -1378,7 +1378,7 @@
         function elenthPageAnimation(){
             let gg = gsap.timeline({
                 scrollTrigger:{
-                    trigger:".elenth-page",
+                    trigger:".elenth-page-left",
                     start:"top 80%"
                 }
             })
@@ -1398,7 +1398,7 @@
                 y:0,
                 duration:1,
                 overwrite:"auto"
-            },"<+0.5").fromTo(".elenth-page-para-right form > :nth-child(1)",{
+            },"<+0.5").fromTo(".elenth-page .paraBox p",{
                 opacity:0,
                 y:30
             },{
@@ -1406,7 +1406,39 @@
                 y:0,
                 duration:1,
                 overwrite:"auto"
-            },"<").fromTo(".elenth-page .paraBox p",{
+            },"<+0.5").fromTo(".elenth-page .paraBox h4",{
+                opacity:0,
+                y:30
+            },{
+                opacity:1,
+                y:0,
+                duration:1,
+                overwrite:"auto"
+            },"<+0.5").fromTo(".elenth-page-para-left .location",{
+                opacity:0,
+                y:30
+            },{
+                opacity:1,
+                y:0,
+                duration:1,
+                overwrite:"auto"
+            },"<+0.5").fromTo(".elenth-page-para-right form .submit",{
+                opacity:0,
+                y:30
+            },{
+                opacity:1,
+                y:0,
+                duration:1,
+                overwrite:"auto"
+            },"<+0.5")
+
+            let gg2 = gsap.timeline({
+                scrollTrigger:{
+                    trigger:".elenth-page-right",
+                    start:"top 80%"
+                }
+            })
+            gg2.fromTo(".elenth-page-para-right form > :nth-child(1)",{
                 opacity:0,
                 y:30
             },{
@@ -1422,14 +1454,6 @@
                 y:0,
                 duration:1,
                 overwrite:"auto"
-            },"<").fromTo(".elenth-page .paraBox h4",{
-                opacity:0,
-                y:30
-            },{
-                opacity:1,
-                y:0,
-                duration:1,
-                overwrite:"auto"
             },"<+0.5").fromTo(".elenth-page-para-right form > :nth-child(3)",{
                 opacity:0,
                 y:30
@@ -1438,23 +1462,7 @@
                 y:0,
                 duration:1,
                 overwrite:"auto"
-            },"<").fromTo(".elenth-page-para-left .location",{
-                opacity:0,
-                y:30
-            },{
-                opacity:1,
-                y:0,
-                duration:1,
-                overwrite:"auto"
             },"<+0.5").fromTo(".elenth-page-para-right form > :nth-child(4)",{
-                opacity:0,
-                y:30
-            },{
-                opacity:1,
-                y:0,
-                duration:1,
-                overwrite:"auto"
-            },"<").fromTo(".elenth-page-para-right form .submit",{
                 opacity:0,
                 y:30
             },{
