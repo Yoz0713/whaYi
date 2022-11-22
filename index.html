@@ -1382,15 +1382,7 @@
                     start:"top 80%"
                 }
             })
-            gg.fromTo(".elenth-page-title h3",{
-                opacity:0,
-                y:30
-            },{
-                opacity:1,
-                y:0,
-                duration:1.2,
-                overwrite:"auto"
-            }).fromTo(".elenth-page .paraBox img",{
+            gg.fromTo(".elenth-page .paraBox img",{
                 opacity:0,
                 y:30
             },{
@@ -1398,7 +1390,7 @@
                 y:0,
                 duration:1,
                 overwrite:"auto"
-            },"<+0.5").fromTo(".elenth-page .paraBox p",{
+            }).fromTo(".elenth-page .paraBox p",{
                 opacity:0,
                 y:30
             },{
@@ -1438,7 +1430,15 @@
                     start:"top 80%"
                 }
             })
-            gg2.fromTo(".elenth-page-para-right form > :nth-child(1)",{
+            gg2.fromTo(".elenth-page-title h3",{
+                opacity:0,
+                y:30
+            },{
+                opacity:1,
+                y:0,
+                duration:1.2,
+                overwrite:"auto"
+            }).fromTo(".elenth-page-para-right form > :nth-child(1)",{
                 opacity:0,
                 y:30
             },{
