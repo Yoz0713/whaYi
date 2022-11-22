@@ -48,8 +48,8 @@ p{
         display: inline-block;
     }
 }
-
-
+button{-webkit-appearance:none;}
+input{-webkit-tap-highlight-color:rgab(0,0,0,0);}
 
 .phone{
     display: none;

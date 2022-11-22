@@ -1423,6 +1423,7 @@
   align-items: center;
   font-size: 0.8vw;
   letter-spacing: 0.1em;
+  color: #fff;
 }
 .elenth-page-para-left .location-left p .square-para {
   display: inline-flex;
@@ -4407,6 +4408,14 @@ p {
 }
 .blind span {
   display: inline-block;
+}
+
+button {
+  -webkit-appearance: none;
+}
+
+input {
+  -webkit-tap-highlight-color: rgab(0, 0, 0, 0);
 }
 
 .phone {
