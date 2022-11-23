@@ -826,6 +826,27 @@
   font-size: 0.8vw;
   line-height: 2em;
 }
+.sixth-page .swiper .prev, .sixth-page .swiper .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  top: 15vw;
+  border-radius: 50%;
+  background-color: #000;
+  color: #DDBF73;
+  font-weight: 700;
+  font-size: 2vw;
+  z-index: 20;
+}
+.sixth-page .swiper .next {
+  right: 36vw;
+}
+.sixth-page .swiper .prev {
+  left: 0.7vw;
+}
 
 .sixth-page-opposite .sixth-page-bg img {
   left: 0;
@@ -839,6 +860,12 @@
 }
 .sixth-page-opposite .swiper-slide .paraBox {
   order: -1;
+}
+.sixth-page-opposite .swiper .next {
+  right: 0.7vw;
+}
+.sixth-page-opposite .swiper .prev {
+  left: 36vw;
 }
 
 .seventh-page {
@@ -2390,6 +2417,27 @@
   .sixth-page .swiper .swiper-wrapper .swiper-slide .paraBox p br {
     display: none;
   }
+  .sixth-page .swiper .prev, .sixth-page .swiper .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    top: 28vw;
+    border-radius: 50%;
+    background-color: #000;
+    color: #DDBF73;
+    font-weight: 700;
+    font-size: 2vw;
+    z-index: 20;
+  }
+  .sixth-page .swiper .next {
+    right: 1.5vw;
+  }
+  .sixth-page .swiper .prev {
+    left: 1.5vw;
+  }
   .sixth-page-opposite .sixth-page-bg img {
     width: 55vw;
     position: absolute;
@@ -3042,8 +3090,16 @@
     top: 0;
     bottom: 0;
     margin: auto 0;
-    left: -5vw;
+    left: -30%;
     width: 5vw;
+    -webkit-animation-name: shaking;
+            animation-name: shaking;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
   }
   .island .mail {
     position: absolute;
@@ -3056,12 +3112,14 @@
   }
   .island .golden {
     position: absolute;
+    pointer-events: none;
     top: 0;
     bottom: 0;
     margin: auto 0;
     right: 3vw;
     width: 5vw;
     opacity: 0;
+    filter: drop-shadow(0 0 5px #DDBF73);
   }
 }
 @media screen and (max-width: 1080px) and (max-width: 500px) {
@@ -3194,21 +3252,25 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    z-index: -1;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow-x: auto;
+    z-index: 0;
   }
   .second-page-bg img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    z-index: -1;
+    width: auto;
+    height: 220vw;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .second-page-bg::after {
     display: block;
     content: "3D外觀示意圖";
     position: absolute;
-    right: 0.5vw;
-    bottom: 0.5vw;
+    right: 2vw;
+    bottom: 2vw;
     font-size: 3vw;
     color: #fff;
     letter-spacing: 0.1em;
@@ -3220,6 +3282,7 @@
     margin-top: 20vw;
     color: #fff;
     position: absolute;
+    z-index: 10;
   }
   .second-page-para img {
     width: 60vw;
@@ -3873,6 +3936,21 @@
   .sixth-page .swiper .swiper-wrapper .swiper-slide .paraBox p br {
     display: none;
   }
+  .sixth-page .swiper .prev, .sixth-page .swiper .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    top: 25vw;
+    border-radius: 50%;
+    background-color: #000;
+    color: #DDBF73;
+    font-weight: 700;
+    font-size: 2vw;
+    z-index: 20;
+  }
   .sixth-page-opposite .sixth-page-bg img {
     width: 55vw;
     position: absolute;
@@ -4430,29 +4508,6 @@ p {
   font-family: Microsoft JhengHei, serif;
 }
 
-@-webkit-keyframes glowing {
-  0% {
-    transform: translateX(0%) skewX(30deg);
-  }
-  35% {
-    transform: translateX(1200%) skewX(30deg);
-  }
-  100% {
-    transform: translateX(1200%) skewX(30deg);
-  }
-}
-
-@keyframes glowing {
-  0% {
-    transform: translateX(0%) skewX(30deg);
-  }
-  35% {
-    transform: translateX(1200%) skewX(30deg);
-  }
-  100% {
-    transform: translateX(1200%) skewX(30deg);
-  }
-}
 .blind span {
   display: inline-block;
 }
@@ -4490,5 +4545,27 @@ textarea {
 @media screen and (max-width: 1080px) and (max-width: 500px) {
   .prev img, .next img {
     width: 5vw;
+  }
+}
+@-webkit-keyframes glowing {
+  0% {
+    transform: translateX(0%) skewX(30deg);
+  }
+  35% {
+    transform: translateX(1200%) skewX(30deg);
+  }
+  100% {
+    transform: translateX(1200%) skewX(30deg);
+  }
+}
+@keyframes glowing {
+  0% {
+    transform: translateX(0%) skewX(30deg);
+  }
+  35% {
+    transform: translateX(1200%) skewX(30deg);
+  }
+  100% {
+    transform: translateX(1200%) skewX(30deg);
   }
 }

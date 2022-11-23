@@ -381,6 +381,12 @@
                     </div>
                 </div>
             </div>
+            <div class="prev">
+                <img src="./img/svg/arrow.svg"> 
+            </div>
+            <div class="next">
+                <img src="./img/svg/arrow.svg">
+            </div>
         </div>
     </section>
     <section class="sixth-page sixth-page-opposite">
@@ -453,6 +459,12 @@
                         <p>柔軟了城市的框架，自然的植物花卉，陳述著城市的清新，<br>輕柔地將自然、綠意回憶溶入生活的本質。</p>
                     </div>
                 </div>
+            </div>
+            <div class="prev">
+                <img src="./img/svg/arrow.svg"> 
+            </div>
+            <div class="next">
+                <img src="./img/svg/arrow.svg">
             </div>
         </div>
     </section>
@@ -821,6 +833,26 @@
             },
             speed:1000,
         })
+        $(".sixth-page-same .prev").click(()=>{
+          
+                swiper3[0].slidePrev()
+             
+             
+            })
+            $(".sixth-page-same .next").click(()=>{
+                swiper3[0].slideNext()
+          
+        })
+        $(".sixth-page-opposite.prev").click(()=>{
+          
+          swiper3[1].slidePrev()
+       
+       
+      })
+      $(".sixth-page-opposite .next").click(()=>{
+          swiper3[1].slideNext()
+    
+  })
         const swiper4 = new Swiper(".ninth-page .swiper",{
             autoplay:true,
             loop:true,
@@ -1498,6 +1530,10 @@
                 opacity:1,
                 duration:0.8
             },"<")
+
+          
+
+           
         }
         islandAnimation()
         //fancy
@@ -1520,13 +1556,47 @@
 
 
         //fancy
+      
         $(window).scroll(function () {
-            var scale_ = ($("body").height()-$(window).height()) / ($('.island').width()-32) //頁面長度與進度條比例
+            var scale_ = ($("body").height()-$(window).height()) / ($('.island').width()/1.26) //頁面長度與進度條比例
             let scroll_ = $(this).scrollTop()
             let scroll_float = (scroll_ / scale_)
-            console.log(scroll_ , scale_)
-            $('.coin').attr("style", "left:" + +scroll_float + "px");
+        
+
+            $('.coin').attr("style", "left:" + scroll_float + "px");
+            let gg = gsap.timeline()
+            gg.to(".island",{
+                scale:1.5,
+                opacity:0.8,
+                duration:1,
+                overwrite:"auto"
+            })
+            let gg2 = gsap.timeline({paused:true})
+
+            gg2.to(".island",{
+                scale:1,
+                opacity:1,
+                duration:1,
+                overwrite:"auto"
+            })
+
+            Promise.resolve(gg).then(()=>{
+                gg2.play()
+            })
         })
+
+
+        //ANCHOR TO CONTACT
+        $(".mail").click(()=>{
+           let x = $('.elenth-page').offset()
+           $('html, body').animate({
+            scrollTop: x
+            },
+            1000);
+           
+        })
+
+        //ANCHOR TO CONTACT
     </script>
 </body>
 </html>

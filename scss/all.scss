@@ -32,17 +32,7 @@ body{
 p{
     font-family:Microsoft JhengHei,serif;
 }
-@keyframes glowing{
-    0%{
-        transform: translateX(0%) skewX(30deg);
-    }
-    35%{
-        transform: translateX(1200%) skewX(30deg);
-    }
-    100%{
-        transform: translateX(1200%) skewX(30deg);
-    }
-}
+
 .blind{
     span{
         display: inline-block;
@@ -75,6 +65,7 @@ textarea {-webkit-appearance: none;}
     .prev,.next{
         
         img{
+            
             width: 3.5vw;
         }
     }
@@ -85,5 +76,18 @@ textarea {-webkit-appearance: none;}
                 width: 5vw;
             }
         }
+    }
+}
+
+
+@keyframes glowing{
+    0%{
+        transform: translateX(0%) skewX(30deg);
+    }
+    35%{
+        transform: translateX(1200%) skewX(30deg);
+    }
+    100%{
+        transform: translateX(1200%) skewX(30deg);
     }
 }
