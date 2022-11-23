@@ -658,6 +658,7 @@
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
            
         </div>
         <div class="ninth-page-bg">
@@ -758,10 +759,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script>
         const swiper = new Swiper('.forth-page .swiper', {
-            autoplay:true,
+       
+            autoplay:{
+                delay:6000
+            },
             loop: true,
             speed:1000,
-          
+            
             // If we need pagination
             pagination: {
                 el: '.forth-page .swiper-pagination',
@@ -799,7 +803,9 @@
             }
             toggleNum()
         const swiper2 = new Swiper(".fifth-page .swiper",{
-            autoplay:true,
+            autoplay:{
+                delay:6000
+            },
             loop:true,
             slidesPerView: 1.1,
             centeredSlides:true,
@@ -825,7 +831,9 @@
           
             })
         const swiper3 = new Swiper(".sixth-page .swiper",{
-            autoplay:true,
+            autoplay:{
+                delay:6000
+            },
             loop:true,
             effect : 'fade',
             fadeEffect: {
@@ -854,9 +862,15 @@
     
   })
         const swiper4 = new Swiper(".ninth-page .swiper",{
-            autoplay:true,
+            autoplay:{
+                delay:6000
+            },
             loop:true,
             speed:1000,
+            pagination: {
+            el: '.swiper-pagination',
+            clickable:true
+        },
         })
 
 
@@ -1114,7 +1128,7 @@
                 opacity:1,
                 y:0,
                 duration:1.2
-            }).fromTo(".sixth-page-same .swiper .imgBox",{
+            }).fromTo(".sixth-page-same .swiper",{
                 opacity:0,
                 y:30
             },{
@@ -1149,7 +1163,7 @@
                 opacity:1,
                 y:0,
                 duration:1.2
-            }).fromTo(".sixth-page-opposite .swiper .imgBox",{
+            }).fromTo(".sixth-page-opposite .swiper",{
                 opacity:0,
                 y:30
             },{
